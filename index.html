@@ -16,14 +16,21 @@
             margin-top: 20px;
             color: #f9d342;
         }
-        .spinner {
+        .spinner-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
             margin: 20px auto;
-            width: 120px;
-            height: 120px;
+        }
+        .spinner {
+            width: 100%;
+            height: 100%;
             border: 10px solid #00aaff; /* Color azul para el borde del círculo */
             border-top: 10px solid transparent;
             border-radius: 50%;
-            position: relative;
+            position: absolute;
+            top: 0;
+            left: 0;
             animation: spin 2s linear infinite;
         }
         @keyframes spin {
@@ -31,12 +38,10 @@
             100% { transform: rotate(360deg); }
         }
         .spinner img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 50px;
-            height: 50px;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover; /* Asegura que la imagen ocupe todo el círculo */
         }
         #progress-bar {
             width: 80%;
@@ -87,10 +92,16 @@
 </head>
 <body>
     <h1>Speed Miner</h1>
-    <div class="spinner">
-        <!-- Aquí se usa la imagen proporcionada -->
-        <img src="https://i.ibb.co/8Xf45QN/speed.jpg" alt="Logo Criptomoneda">
+    
+    <!-- Contenedor del spinner y el logo -->
+    <div class="spinner-container">
+        <!-- Logo estático -->
+        <img src="https://cdn.discordapp.com/attachments/1228605229088510003/1294359800913592382/IMG_3182.png?ex=670aba00&is=67096880&hm=576a42c5c3195e3238d85bf597b2bfc943d9225fc80b11967eefe410dfc941d2&" alt="Logo Criptomoneda">
+        
+        <!-- Círculo giratorio -->
+        <div class="spinner"></div>
     </div>
+
     <div id="progress-bar">
         <div id="progress"></div>
     </div>
@@ -153,3 +164,4 @@
     </script>
 </body>
 </html>
+
