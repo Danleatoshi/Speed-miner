@@ -187,7 +187,7 @@
                 progress++;
                 document.getElementById('progress').style.width = progress + "%";
                 if (progress % 10 === 0) {
-                    coins++;
+                    coins += 0.5; // Aumentar 0.5 criptomonedas
                     document.getElementById('counter').innerHTML = coins + " Criptomonedas";
                 }
                 setTimeout(mineCoins, 100);
