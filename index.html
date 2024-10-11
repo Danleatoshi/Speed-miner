@@ -187,8 +187,12 @@
                 progress++;
                 document.getElementById('progress').style.width = progress + "%";
                 if (progress % 10 === 0) {
-                    totalMined += 0.5; // Aumentar 0.5 criptomonedas al total minado
-                    document.getElementById('total-mined').innerHTML = "Minado = " + totalMined; // Actualiza el total minado
+                    coins += 1; // Aumentar 1 criptomoneda al total de minado
+                    document.getElementById('counter').innerHTML = coins + " Criptomonedas"; // Actualiza el contador de criptomonedas
+                    if (coins % 10 === 0) {
+                        totalMined += 0.5; // Aumentar 0.5 criptomonedas al total minado
+                        document.getElementById('total-mined').innerHTML = "Minado = " + totalMined; // Actualiza el total minado
+                    }
                 }
                 setTimeout(mineCoins, 100);
             } else {
@@ -218,5 +222,3 @@
     </script>
 </body>
 </html>
-
-
