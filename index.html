@@ -8,7 +8,7 @@
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
-            background: radial-gradient(circle, rgba(10,24,48,1) 0%, rgba(2,12,24,1) 100%);
+            background: radial-gradient(circle, rgba(10, 24, 48, 1) 0%, rgba(2, 12, 24, 1) 100%);
             color: white;
         }
         h1 {
@@ -16,40 +16,24 @@
             margin-top: 20px;
             color: #f9d342;
         }
-        .spinner-container {
+        .floating-logo {
+            width: 150px; /* Ajusta el tamaño del logo */
+            height: 150px; /* Ajusta el tamaño del logo */
             position: relative;
-            width: 150px;  /* Tamaño del contenedor del spinner */
-            height: 150px; /* Tamaño del contenedor del spinner */
             margin: 20px auto;
+            animation: float 2s ease-in-out infinite; /* Efecto de levitación */
+            border-radius: 50%; /* Asegura que el logo tenga forma circular */
+            overflow: hidden; /* Asegura que la imagen no sobresalga */
         }
-        .spinner {
-            width: 100%;
-            height: 100%;
-            border: 10px solid transparent; /* Borde transparente inicialmente */
-            border-top: 10px solid transparent; /* Parte superior sin color */
-            border-image: linear-gradient(45deg, #00aaff, #a020f0) 1; /* Efecto de degradado azul a morado */
-            border-radius: 50%; /* Asegura que sea circular */
-            position: absolute;
-            top: 0;
-            left: 0;
-            animation: spin 2s linear infinite;
-            box-sizing: border-box; /* Incluye el borde en el tamaño del elemento */
-            z-index: 1; /* Asegura que el spinner esté encima del logo */
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
         }
         .logo {
-            width: 80%; /* Ajusta el tamaño del logo al 80% del contenedor */
-            height: 80%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Centra la imagen */
-            border-radius: 50%; /* Asegura que la imagen tenga forma circular */
+            width: 100%; /* Ajusta el tamaño del logo para que ocupe el contenedor */
+            height: 100%; /* Ajusta el tamaño del logo para que ocupe el contenedor */
             object-fit: cover; /* Asegura que la imagen ocupe bien el círculo */
-            z-index: 2; /* Asegura que el logo esté encima del spinner */
         }
         #progress-bar {
             width: 80%;
@@ -100,13 +84,9 @@
 </head>
 <body>
     <h1>Speed Miner</h1>
-    
-    <!-- Contenedor del spinner y el logo -->
-    <div class="spinner-container">
-        <!-- Círculo giratorio con degradado azul a morado -->
-        <div class="spinner"></div>
-        
-        <!-- Logo estático centrado -->
+
+    <!-- Contenedor del logo flotante -->
+    <div class="floating-logo">
         <img class="logo" src="https://cdn.discordapp.com/attachments/1228605229088510003/1294359800913592382/IMG_3182.png?ex=670aba00&is=67096880&hm=576a42c5c3195e3238d85bf597b2bfc943d9225fc80b11967eefe410dfc941d2&" alt="Logo Criptomoneda">
     </div>
 
@@ -115,7 +95,7 @@
     </div>
     <div id="counter">0 Criptomonedas</div>
     <div id="total-mined">Minería completada: 0 veces</div>
-    
+
     <div class="buttons">
         <button onclick="startMining()">Empezar a Minar</button>
         <button onclick="setWithdrawalAmount()">Establecer Retiro</button>
@@ -172,5 +152,3 @@
     </script>
 </body>
 </html>
-
-
