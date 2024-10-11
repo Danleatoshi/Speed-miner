@@ -33,6 +33,7 @@
             left: 0;
             animation: spin 2s linear infinite;
             box-sizing: border-box; /* Incluye el borde en el tamaño del elemento */
+            z-index: 1; /* Asegura que el spinner esté encima del logo */
         }
         @keyframes spin {
             0% { transform: rotate(0deg); }
@@ -47,7 +48,7 @@
             transform: translate(-50%, -50%); /* Centra la imagen */
             border-radius: 50%; /* Asegura que la imagen tenga forma circular */
             object-fit: cover; /* Asegura que la imagen ocupe bien el círculo */
-            z-index: 10; /* Asegura que el logo esté sobre el spinner */
+            z-index: 2; /* Asegura que el logo esté encima del spinner */
         }
         #progress-bar {
             width: 80%;
@@ -101,11 +102,11 @@
     
     <!-- Contenedor del spinner y el logo -->
     <div class="spinner-container">
-        <!-- Logo estático centrado -->
-        <img class="logo" src="https://cdn.discordapp.com/attachments/1228605229088510003/1294359800913592382/IMG_3182.png?ex=670aba00&is=67096880&hm=576a42c5c3195e3238d85bf597b2bfc943d9225fc80b11967eefe410dfc941d2&" alt="Logo Criptomoneda">
-        
         <!-- Círculo giratorio con degradado azul a morado -->
         <div class="spinner"></div>
+        
+        <!-- Logo estático centrado -->
+        <img class="logo" src="https://cdn.discordapp.com/attachments/1228605229088510003/1294359800913592382/IMG_3182.png?ex=670aba00&is=67096880&hm=576a42c5c3195e3238d85bf597b2bfc943d9225fc80b11967eefe410dfc941d2&" alt="Logo Criptomoneda">
     </div>
 
     <div id="progress-bar">
