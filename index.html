@@ -25,7 +25,8 @@
         .spinner {
             width: 100%;
             height: 100%;
-            border: 10px solid #00aaff; /* Color azul para el borde del círculo */
+            border: 10px solid; /* Borde sin color para el spinner */
+            border-image: linear-gradient(45deg, #00aaff, #a020f0) 1; /* Efecto de degradado azul a morado */
             border-top: 10px solid transparent;
             border-radius: 50%;
             position: absolute;
@@ -38,8 +39,8 @@
             100% { transform: rotate(360deg); }
         }
         .logo {
-            width: 80%; /* Ajusta el tamaño del logo al 80% del contenedor */
-            height: 80%;
+            width: 70%; /* Ajusta el tamaño del logo al 70% del contenedor */
+            height: 70%;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -102,7 +103,7 @@
         <!-- Logo estático centrado -->
         <img class="logo" src="https://cdn.discordapp.com/attachments/1228605229088510003/1294359800913592382/IMG_3182.png?ex=670aba00&is=67096880&hm=576a42c5c3195e3238d85bf597b2bfc943d9225fc80b11967eefe410dfc941d2&" alt="Logo Criptomoneda">
         
-        <!-- Círculo giratorio -->
+        <!-- Círculo giratorio con degradado azul a morado -->
         <div class="spinner"></div>
     </div>
 
@@ -168,3 +169,4 @@
     </script>
 </body>
 </html>
+
