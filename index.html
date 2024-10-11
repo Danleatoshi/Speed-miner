@@ -14,11 +14,14 @@
         h1 {
             font-size: 3em;
             margin-top: 20px;
-            color: #f9d342;
+            background: linear-gradient(45deg, #00aaff, #a020f0); /* Degradado azul a morado */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0; /* Eliminar margen */
         }
         .floating-logo {
-            width: 150px; /* Ajusta el tamaño del logo */
-            height: 150px; /* Ajusta el tamaño del logo */
+            width: 150px; /* Tamaño del logo */
+            height: 150px; /* Tamaño del logo */
             position: relative;
             margin: 20px auto;
             animation: float 2s ease-in-out infinite; /* Efecto de levitación */
@@ -31,8 +34,8 @@
             100% { transform: translateY(0); }
         }
         .logo {
-            width: 100%; /* Ajusta el tamaño del logo para que ocupe el contenedor */
-            height: 100%; /* Ajusta el tamaño del logo para que ocupe el contenedor */
+            width: 100%; /* Tamaño del logo */
+            height: 100%; /* Tamaño del logo */
             object-fit: cover; /* Asegura que la imagen ocupe bien el círculo */
         }
         #progress-bar {
@@ -47,9 +50,16 @@
             background-color: #4caf50;
             border-radius: 20px;
         }
-        #counter, #total-mined {
+        #counter {
             font-size: 2em;
             margin: 20px;
+        }
+        .mined-container {
+            border: 2px solid white; /* Borde blanco */
+            padding: 10px;
+            margin: 20px auto;
+            width: 80%; /* Ancho del cuadro */
+            background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
         }
         .buttons {
             display: flex;
@@ -87,15 +97,20 @@
 
     <!-- Contenedor del logo flotante -->
     <div class="floating-logo">
-        <img class="logo" src="https://cdn.discordapp.com/attachments/1228605229088510003/1294359800913592382/IMG_3182.png?ex=670aba00&is=67096880&hm=576a42c5c3195e3238d85bf597b2bfc943d9225fc80b11967eefe410dfc941d2&" alt="Logo Criptomoneda">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/en/d/d0/Tether_logo.svg" alt="Logo USDT">
     </div>
 
     <div id="progress-bar">
         <div id="progress"></div>
     </div>
+    
     <div id="counter">0 Criptomonedas</div>
-    <div id="total-mined">Minería completada: 0 veces</div>
 
+    <!-- Cuadro para mostrar el total minado -->
+    <div class="mined-container">
+        <div id="total-mined">Minado = 0</div>
+    </div>
+    
     <div class="buttons">
         <button onclick="startMining()">Empezar a Minar</button>
         <button onclick="setWithdrawalAmount()">Establecer Retiro</button>
@@ -134,8 +149,8 @@
                 setTimeout(mineCoins, 100);
             } else {
                 mining = false;
-                totalMined++;
-                document.getElementById('total-mined').innerHTML = "Minería completada: " + totalMined + " veces";
+                totalMined += coins; // Aumenta el total de minados
+                document.getElementById('total-mined').innerHTML = "Minado = " + totalMined; // Actualiza el total minado
                 alert("Minería completada. ¡Has minado " + coins + " criptomonedas!");
             }
         }
@@ -152,3 +167,4 @@
     </script>
 </body>
 </html>
+
