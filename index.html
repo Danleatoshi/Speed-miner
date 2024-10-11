@@ -56,18 +56,19 @@
         }
         .mined-container {
             border: 2px solid white; /* Borde blanco */
-            padding: 10px;
+            padding: 5px; /* Menos padding para un cuadro más pequeño */
             margin: 20px auto;
-            width: 80%; /* Ancho del cuadro */
+            width: 60%; /* Ancho del cuadro más pequeño */
             background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
             display: flex;
             align-items: center; /* Alinea verticalmente el logo */
             justify-content: center; /* Alinea horizontalmente el logo */
+            font-size: 1.5em; /* Tamaño de fuente más pequeño */
         }
         .usdt-logo {
-            width: 30px; /* Tamaño del logo USDT */
-            height: 30px; /* Tamaño del logo USDT */
-            margin-right: 10px; /* Espaciado a la derecha */
+            width: 20px; /* Tamaño del logo USDT */
+            height: 20px; /* Tamaño del logo USDT */
+            margin-right: 5px; /* Espaciado a la derecha */
         }
         .buttons {
             display: flex;
@@ -97,6 +98,29 @@
             padding: 10px;
             width: 200px;
             margin-bottom: 10px;
+        }
+        .menu {
+            margin-top: 20px;
+        }
+        .menu-button {
+            padding: 10px 20px;
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .menu-button:hover {
+            background-color: #e64a19;
+        }
+        .referral-container {
+            display: none; /* Oculta por defecto */
+            margin-top: 20px;
+        }
+        .referral-logo {
+            width: 50px; /* Tamaño del logo de referido */
+            height: 50px; /* Tamaño del logo de referido */
         }
     </style>
 </head>
@@ -128,6 +152,16 @@
     <div class="input-group">
         <input type="text" id="withdrawal-amount" placeholder="Cantidad de Retiro">
         <input type="text" id="bep20-address" placeholder="Red BEP20">
+    </div>
+
+    <div class="menu">
+        <button class="menu-button" onclick="toggleReferral()">Ver Referido</button>
+    </div>
+
+    <!-- Contenedor de referido -->
+    <div class="referral-container" id="referral-container">
+        <h2>Referencia</h2>
+        <img class="referral-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Referral_Icon.svg/1024px-Referral_Icon.svg.png" alt="Logo Referido">
     </div>
 
     <script>
@@ -173,8 +207,16 @@
                 alert("Por favor, ingresa una cantidad válida y una dirección BEP20.");
             }
         }
+
+        function toggleReferral() {
+            const referralContainer = document.getElementById('referral-container');
+            if (referralContainer.style.display === "none" || referralContainer.style.display === "") {
+                referralContainer.style.display = "block"; // Mostrar el contenedor de referido
+            } else {
+                referralContainer.style.display = "none"; // Ocultar el contenedor de referido
+            }
+        }
     </script>
 </body>
 </html>
-
 
