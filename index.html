@@ -25,7 +25,8 @@
         .spinner {
             width: 100%;
             height: 100%;
-            border: 10px solid; /* Borde sin color para el spinner */
+            border: 10px solid transparent; /* Borde transparente inicialmente */
+            border-top: 10px solid transparent; /* Parte superior sin color */
             border-image: linear-gradient(45deg, #00aaff, #a020f0) 1; /* Efecto de degradado azul a morado */
             border-radius: 50%; /* Asegura que sea circular */
             position: absolute;
@@ -49,7 +50,6 @@
             border-radius: 50%; /* Asegura que la imagen tenga forma circular */
             object-fit: cover; /* Asegura que la imagen ocupe bien el círculo */
             z-index: 2; /* Asegura que el logo esté encima del spinner */
-            background: white; /* Color de fondo blanco para el logo */
         }
         #progress-bar {
             width: 80%;
@@ -172,4 +172,5 @@
     </script>
 </body>
 </html>
+
 
