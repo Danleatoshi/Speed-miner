@@ -60,6 +60,14 @@
             margin: 20px auto;
             width: 80%; /* Ancho del cuadro */
             background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+            display: flex;
+            align-items: center; /* Alinea verticalmente el logo */
+            justify-content: center; /* Alinea horizontalmente el logo */
+        }
+        .usdt-logo {
+            width: 30px; /* Tamaño del logo USDT */
+            height: 30px; /* Tamaño del logo USDT */
+            margin-right: 10px; /* Espaciado a la derecha */
         }
         .buttons {
             display: flex;
@@ -97,7 +105,7 @@
 
     <!-- Contenedor del logo flotante -->
     <div class="floating-logo">
-        <img class="logo" src="https://upload.wikimedia.org/wikipedia/en/d/d0/Tether_logo.svg" alt="Logo USDT">
+        <img class="logo" src="https://cdn.discordapp.com/attachments/1228605229088510003/1294359800913592382/IMG_3182.png?ex=670aba00&is=67096880&hm=576a42c5c3195e3238d85bf597b2bfc943d9225fc80b11967eefe410dfc941d2&" alt="Logo Criptomoneda">
     </div>
 
     <div id="progress-bar">
@@ -108,6 +116,7 @@
 
     <!-- Cuadro para mostrar el total minado -->
     <div class="mined-container">
+        <img class="usdt-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Tether_logo.svg/2048px-Tether_logo.svg.png" alt="Logo USDT">
         <div id="total-mined">Minado = 0</div>
     </div>
     
@@ -167,4 +176,5 @@
     </script>
 </body>
 </html>
+
 
