@@ -41,7 +41,7 @@
             background-color: #4caf50;
             border-radius: 20px;
         }
-        #counter {
+        #counter, #total-mined {
             font-size: 2em;
             margin: 20px;
         }
@@ -83,67 +83,12 @@
         <div id="progress"></div>
     </div>
     <div id="counter">0 Criptomonedas</div>
+    <div id="total-mined">Minería completada: 0 veces</div>
     
     <div class="buttons">
         <button onclick="startMining()">Empezar a Minar</button>
         <button onclick="setWithdrawalAmount()">Establecer Retiro</button>
-        <button onclick="setLink()">Agregar Link</button>
     </div>
 
     <div class="input-group">
-        <input type="text" id="withdrawal-amount" placeholder="Cantidad de Retiro">
-        <input type="text" id="custom-link" placeholder="Enlace Personalizado">
-    </div>
-
-    <script>
-        let mining = false;
-        let coins = 0;
-        let progress = 0;
-
-        function startMining() {
-            if (!mining) {
-                mining = true;
-                progress = 0;
-                coins = 0;
-                document.getElementById('counter').innerHTML = coins + " Criptomonedas";
-                document.getElementById('progress').style.width = "0%";
-                mineCoins();
-            }
-        }
-
-        function mineCoins() {
-            if (progress < 100) {
-                progress++;
-                document.getElementById('progress').style.width = progress + "%";
-                if (progress % 10 === 0) {
-                    coins++;
-                    document.getElementById('counter').innerHTML = coins + " Criptomonedas";
-                }
-                setTimeout(mineCoins, 100);
-            } else {
-                mining = false;
-                alert("Minería completada. ¡Has minado " + coins + " criptomonedas!");
-            }
-        }
-
-        function setWithdrawalAmount() {
-            let amount = document.getElementById('withdrawal-amount').value;
-            if (amount) {
-                alert("Cantidad de retiro establecida: " + amount);
-            } else {
-                alert("Por favor, ingresa una cantidad válida para el retiro.");
-            }
-        }
-
-        function setLink() {
-            let link = document.getElementById('custom-link').value;
-            if (link) {
-                alert("Enlace personalizado agregado: " + link);
-            } else {
-                alert("Por favor, ingresa un enlace válido.");
-            }
-        }
-    </script>
-</body>
-</html>
-
+        <input type="text" id="withdrawal-amount" placeholder="Cantidad de
