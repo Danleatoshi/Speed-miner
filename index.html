@@ -18,8 +18,8 @@
         }
         .spinner-container {
             position: relative;
-            width: 150px;
-            height: 150px;
+            width: 150px;  /* Tamaño del contenedor del spinner */
+            height: 150px; /* Tamaño del contenedor del spinner */
             margin: 20px auto;
         }
         .spinner {
@@ -27,26 +27,27 @@
             height: 100%;
             border: 10px solid; /* Borde sin color para el spinner */
             border-image: linear-gradient(45deg, #00aaff, #a020f0) 1; /* Efecto de degradado azul a morado */
-            border-top: 10px solid transparent;
-            border-radius: 50%;
+            border-radius: 50%; /* Asegura que sea circular */
             position: absolute;
             top: 0;
             left: 0;
             animation: spin 2s linear infinite;
+            box-sizing: border-box; /* Incluye el borde en el tamaño del elemento */
         }
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
         .logo {
-            width: 70%; /* Ajusta el tamaño del logo al 70% del contenedor */
-            height: 70%;
+            width: 80%; /* Ajusta el tamaño del logo al 80% del contenedor */
+            height: 80%;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%); /* Centra la imagen */
-            border-radius: 50%;
+            border-radius: 50%; /* Asegura que la imagen tenga forma circular */
             object-fit: cover; /* Asegura que la imagen ocupe bien el círculo */
+            z-index: 10; /* Asegura que el logo esté sobre el spinner */
         }
         #progress-bar {
             width: 80%;
@@ -169,4 +170,3 @@
     </script>
 </body>
 </html>
-
