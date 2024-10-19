@@ -29,6 +29,26 @@
         </div>
     </section>
 
+    <section id="features">
+        <div class="container">
+            <h2>Why Choose Speed Miner?</h2>
+            <div class="feature-box">
+                <div class="feature">
+                    <h3>Reliable</h3>
+                    <p>Our mining infrastructure is secure and available 24/7.</p>
+                </div>
+                <div class="feature">
+                    <h3>Fast</h3>
+                    <p>Get the best hash rate performance with our optimized systems.</p>
+                </div>
+                <div class="feature">
+                    <h3>Eco-Friendly</h3>
+                    <p>We focus on green mining solutions to save energy and protect the environment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="pricing">
         <div class="container">
             <h2>Pricing Plans</h2>
