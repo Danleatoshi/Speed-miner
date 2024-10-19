@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Miner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Speed Miner</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2>Efficient Cloud Mining with Speed Miner</h2>
+            <p>Start mining cryptocurrency today with the best cloud mining platform.</p>
+            <a href="#pricing" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <div class="container">
+            <h2>Pricing Plans</h2>
+            <div class="plans">
+                <div class="plan">
+                    <h3>Basic Plan</h3>
+                    <p>Hash Rate: 10 TH/s</p>
+                    <p>Price: $100/month</p>
+                    <a href="#" class="btn">Choose Plan</a>
+                </div>
+                <div class="plan">
+                    <h3>Pro Plan</h3>
+                    <p>Hash Rate: 50 TH/s</p>
+                    <p>Price: $400/month</p>
+                    <a href="#" class="btn">Choose Plan</a>
+                </div>
+                <div class="plan">
+                    <h3>Premium Plan</h3>
+                    <p>Hash Rate: 100 TH/s</p>
+                    <p>Price: $700/month</p>
+                    <a href="#" class="btn">Choose Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Speed Miner. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
