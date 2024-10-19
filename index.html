@@ -1,224 +1,65 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Speed Miner</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: radial-gradient(circle, rgba(10, 24, 48, 1) 0%, rgba(2, 12, 24, 1) 100%);
-            color: white;
-        }
-        h1 {
-            font-size: 3em;
-            margin-top: 20px;
-            background: linear-gradient(45deg, #00aaff, #a020f0); /* Degradado azul a morado */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 0; /* Eliminar margen */
-        }
-        .floating-logo {
-            width: 150px; /* Tamaño del logo */
-            height: 150px; /* Tamaño del logo */
-            position: relative;
-            margin: 20px auto;
-            animation: float 2s ease-in-out infinite; /* Efecto de levitación */
-            border-radius: 50%; /* Asegura que el logo tenga forma circular */
-            overflow: hidden; /* Asegura que la imagen no sobresalga */
-        }
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0); }
-        }
-        .logo {
-            width: 100%; /* Tamaño del logo */
-            height: 100%; /* Tamaño del logo */
-            object-fit: cover; /* Asegura que la imagen ocupe bien el círculo */
-        }
-        #progress-bar {
-            width: 80%;
-            background-color: #ddd;
-            margin: 20px auto;
-            border-radius: 20px;
-        }
-        #progress {
-            width: 0;
-            height: 30px;
-            background-color: #4caf50;
-            border-radius: 20px;
-        }
-        #counter {
-            font-size: 2em;
-            margin: 20px;
-        }
-        .mined-container {
-            border: 2px solid darkgreen; /* Borde verde oscuro */
-            padding: 5px; /* Menos padding para un cuadro más pequeño */
-            margin: 20px auto;
-            width: 60%; /* Ancho del cuadro más pequeño */
-            background-color: black; /* Fondo negro */
-            border-radius: 10px; /* Bordes redondeados */
-            display: flex;
-            align-items: center; /* Alinea verticalmente el logo */
-            justify-content: center; /* Alinea horizontalmente el logo */
-            font-size: 1.5em; /* Tamaño de fuente más pequeño */
-        }
-        .usdt-logo {
-            width: 20px; /* Tamaño del logo USDT */
-            height: 20px; /* Tamaño del logo USDT */
-            margin-right: 5px; /* Espaciado a la derecha */
-        }
-        .buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .input-group {
-            display: flex;
-            flex-direction: column;
-            margin: 20px 0;
-            align-items: center;
-        }
-        input[type="text"] {
-            padding: 10px;
-            width: 200px;
-            margin-bottom: 10px;
-        }
-        .menu {
-            margin-top: 20px;
-        }
-        .menu-button {
-            padding: 10px 20px;
-            background-color: #ff5722;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-        }
-        .menu-button:hover {
-            background-color: #e64a19;
-        }
-        .referral-container {
-            display: none; /* Oculta por defecto */
-            margin-top: 20px;
-        }
-        .referral-logo {
-            width: 50px; /* Tamaño del logo de referido */
-            height: 50px; /* Tamaño del logo de referido */
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Speed Miner</h1>
+    <header>
+        <div class="container">
+            <h1>Speed Miner</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <!-- Contenedor del logo flotante -->
-    <div class="floating-logo">
-        <img class="logo" src="https://cdn.discordapp.com/attachments/1228605229088510003/1294359800913592382/IMG_3182.png?ex=670aba00&is=67096880&hm=576a42c5c3195e3238d85bf597b2bfc943d9225fc80b11967eefe410dfc941d2&" alt="Logo Criptomoneda">
-    </div>
+    <section id="hero">
+        <div class="container">
+            <h2>Efficient Cloud Mining with Speed Miner</h2>
+            <p>Start mining cryptocurrency today with the best cloud mining platform.</p>
+            <a href="#pricing" class="btn">Get Started</a>
+        </div>
+    </section>
 
-    <div id="progress-bar">
-        <div id="progress"></div>
-    </div>
-    
-    <div id="counter">0 Criptomonedas</div>
+    <section id="pricing">
+        <div class="container">
+            <h2>Pricing Plans</h2>
+            <div class="plans">
+                <div class="plan">
+                    <h3>Basic Plan</h3>
+                    <p>Hash Rate: 10 TH/s</p>
+                    <p>Price: $100/month</p>
+                    <a href="#" class="btn">Choose Plan</a>
+                </div>
+                <div class="plan">
+                    <h3>Pro Plan</h3>
+                    <p>Hash Rate: 50 TH/s</p>
+                    <p>Price: $400/month</p>
+                    <a href="#" class="btn">Choose Plan</a>
+                </div>
+                <div class="plan">
+                    <h3>Premium Plan</h3>
+                    <p>Hash Rate: 100 TH/s</p>
+                    <p>Price: $700/month</p>
+                    <a href="#" class="btn">Choose Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Cuadro para mostrar el total minado -->
-    <div class="mined-container">
-        <img class="usdt-logo" src="https://cryptologos.cc/logos/tether-usdt-logo.png" alt="Logo USDT">
-        <div id="total-mined">Minado = 0</div>
-    </div>
-    
-    <div class="buttons">
-        <button onclick="startMining()">Empezar a Minar</button>
-        <button onclick="setWithdrawalAmount()">Establecer Retiro</button>
-    </div>
-
-    <div class="input-group">
-        <input type="text" id="withdrawal-amount" placeholder="Cantidad de Retiro">
-        <input type="text" id="bep20-address" placeholder="Red BEP20">
-    </div>
-
-    <div class="menu">
-        <button class="menu-button" onclick="toggleReferral()">Ver Referido</button>
-    </div>
-
-    <!-- Contenedor de referido -->
-    <div class="referral-container" id="referral-container">
-        <h2>Referencia</h2>
-        <img class="referral-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Referral_Icon.svg/1024px-Referral_Icon.svg.png" alt="Logo Referido">
-    </div>
-
-    <script>
-        let mining = false;
-        let coins = 0;
-        let progress = 0;
-        let totalMined = 0;
-
-        function startMining() {
-            if (!mining) {
-                mining = true;
-                progress = 0;
-                coins = 0;
-                document.getElementById('counter').innerHTML = coins + " Criptomonedas";
-                document.getElementById('progress').style.width = "0%";
-                mineCoins();
-            }
-        }
-
-        function mineCoins() {
-            if (progress < 100) {
-                progress++;
-                document.getElementById('progress').style.width = progress + "%";
-                if (progress % 10 === 0) {
-                    coins += 1; // Aumentar 1 criptomoneda al total de minado
-                    document.getElementById('counter').innerHTML = coins + " Criptomonedas"; // Actualiza el contador de criptomonedas
-                    if (coins % 10 === 0) {
-                        totalMined += 0.5; // Aumentar 0.5 criptomonedas al total minado
-                        document.getElementById('total-mined').innerHTML = "Minado = " + totalMined; // Actualiza el total minado
-                    }
-                }
-                setTimeout(mineCoins, 100);
-            } else {
-                mining = false;
-                alert("Minería completada. ¡Has minado " + coins + " criptomonedas!");
-            }
-        }
-
-        function setWithdrawalAmount() {
-            let amount = document.getElementById('withdrawal-amount').value;
-            let address = document.getElementById('bep20-address').value;
-            if (amount && address) {
-                alert("Cantidad de retiro establecida: " + amount + " a la dirección BEP20: " + address);
-            } else {
-                alert("Por favor, ingresa una cantidad válida y una dirección BEP20.");
-            }
-        }
-
-        function toggleReferral() {
-            const referralContainer = document.getElementById('referral-container');
-            if (referralContainer.style.display === "none" || referralContainer.style.display === "") {
-                referralContainer.style.display = "block"; // Mostrar el contenedor de referido
-            } else {
-                referralContainer.style.display = "none"; // Ocultar el contenedor de referido
-            }
-        }
-    </script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Speed Miner. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
+
